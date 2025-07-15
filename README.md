@@ -4,7 +4,6 @@ This repository includes scripts and tools for reproducing the figures and resul
 
 ## Features
 
-- Modular codebase for numerical experiments.
 - Example scripts (`ex_...`) to reproduce figures and results.
 - Environment setup via conda for reproducibility.
 
