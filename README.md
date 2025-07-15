@@ -14,7 +14,7 @@ To set up the project environment, ensure you have [conda](https://docs.conda.io
 Then, create and activate the environment using the provided `requirements.yml` file:
 
 ```bash
-conda env create -f requirements.yml
+conda env create -f requirements.yaml
 conda activate msgfemr
 ```
 
