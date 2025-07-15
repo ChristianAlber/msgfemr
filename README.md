@@ -30,6 +30,7 @@ python ex_skyscraper.py
 ```
 
 Each script is documented with comments explaining its purpose and usage. For more information about the experiments and expected outputs, refer to the paper.
+The figures and tables created from the scripts will be saved in the folders plots and tables. 
 
 
 ## Citation
