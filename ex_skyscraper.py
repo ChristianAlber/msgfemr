@@ -126,7 +126,9 @@ plt.legend(loc='lower left', fontsize=14)
 plt.tight_layout(rect=[0, 0, 0.85, 1])
 
 # Save figure with high resolution for publication
-output_path = f"../../manuscript/plots/{filename}.pdf"
+if not ops.path.exists("plots/"):
+    ops.makedirs("plots/")
+output_path = f"plots/{filename}.pdf"
 plt.savefig(output_path, dpi=600, bbox_inches="tight")
 
 # Display the plot
