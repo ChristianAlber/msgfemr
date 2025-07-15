@@ -4,7 +4,6 @@ This repository includes scripts and tools for reproducing the figures and resul
 
 ## Features
 
-- Modular codebase for numerical experiments.
 - Example scripts (`ex_...`) to reproduce figures and results.
 - Environment setup via conda for reproducibility.
 
@@ -14,7 +13,7 @@ To set up the project environment, ensure you have [conda](https://docs.conda.io
 Then, create and activate the environment using the provided `requirements.yml` file:
 
 ```bash
-conda env create -f requirements.yml
+conda env create -f requirements.yaml
 conda activate msgfemr
 ```
 
