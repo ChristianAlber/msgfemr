@@ -10,7 +10,7 @@ This repository includes scripts and tools for reproducing the figures and resul
 ## Installation
 
 To set up the project environment, ensure you have [conda](https://docs.conda.io/en/latest/) installed. 
-Then, create and activate the environment using the provided `requirements.yml` file:
+Then, create and activate the environment using the provided `requirements.yaml` file:
 
 ```bash
 conda env create -f requirements.yaml
