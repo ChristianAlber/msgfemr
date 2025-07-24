@@ -1,5 +1,5 @@
 # msgfemr
-msgfemr is a repository containing the implementation of methods described in our paper [reference to be added]. 
+msgfemr is a repository containing the implementation of methods described in our preprint https://arxiv.org/pdf/2507.12226. 
 This repository includes scripts and tools for reproducing the figures and results presented in the publication.
 
 ## Features
@@ -34,4 +34,4 @@ The figures and tables created from the scripts will be saved in the folders plo
 
 ## Citation
 
-If you use this repository in your research, please cite our paper (details to be added).
+If you use this repository in your research, please cite https://arxiv.org/pdf/2507.12226.
