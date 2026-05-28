@@ -93,3 +93,60 @@ plt.savefig(output_path, dpi=600, bbox_inches="tight")
 
 # Display the plot
 plt.show()
+
+
+
+import pandas as pd
+
+# ---- Plot of matrix sizes ----
+plt.figure(figsize=(8, 6))
+
+for os_id in range(data["oss"].shape[0]):
+    plt.plot(
+        data["nparts"],
+        data["sizes"][:, os_id],
+        label=r"$\omega^*, \ell = $" + str(data["oss"][os_id]),
+        marker="o",
+        linestyle="-",
+        linewidth=2.5,
+        color=colors[os_id],
+    )
+    plt.plot(
+        data["nparts"],
+        data["sizes_ring"][:, os_id],
+        label=r"$R^*, \ell = $" + str(data["oss"][os_id]),
+        marker="x",
+        linestyle="--",
+        linewidth=2.5,
+        color=colors[os_id],
+    )
+
+plt.xlabel(r"$m$", fontsize=16)
+plt.ylabel("size of eigenproblem matrix", fontsize=16)
+plt.xticks([10, 15, 20, 25], fontsize=14)
+plt.yticks([0,20000, 40000, 60000, 80000], fontsize=14)
+plt.grid(True, which="both", linestyle="--", linewidth=0.5, alpha=0.7)
+plt.legend(loc="upper left", fontsize=12)
+plt.tight_layout(rect=[0, 0, 0.85, 1])
+
+if not ops.path.exists("plots/"):
+    ops.makedirs("plots/")
+output_path_sizes = f"plots/{filename[:-4]}_sizes.pdf"
+plt.savefig(output_path_sizes, dpi=600, bbox_inches="tight")
+plt.show()
+
+# ---- Table of matrix sizes ----
+# Rows: m (nparts), Columns: (method, ell)
+nparts = data["nparts"]
+oss = data["oss"]
+
+columns = pd.MultiIndex.from_tuples(
+    [(r"$\omega^*$", int(l)) for l in oss] + [(r"$R^*$", int(l)) for l in oss],
+    names=["method", r"$\ell$"],
+)
+
+table_data = np.hstack([data["sizes"], data["sizes_ring"]]).astype(int)
+df_sizes = pd.DataFrame(table_data, index=nparts.astype(int), columns=columns)
+df_sizes.index.name = r"$m$"
+
+helper.createLatexFile(df_sizes, "sizes", filename[:-4] + "_sizes.tex")
